@@ -1,0 +1,72 @@
+program pengadilan;
+uses crt;
+        type kasus=record
+                namalpr,namaplk,jenis:string;
+                gendre:char;
+        end;
+        tabel = array of kasus;
+var
+        A:tabel;
+        n:integer;
+        procedure menu();
+        begin
+        clrscr;
+        writeln('==============================');
+        writeln('========Selamat Datang========');
+        writeln('=====Aplikasi Pengadilan======');
+        writeln('==============================');
+        writeln;writeln;writeln;writeln;
+        writeln('Menu');
+        writeln('1.Input Permasalahan');
+        writeln('Lihat perasalahan');
+        writeln('2.Keputusan Sidang');
+        writeln('3.Hasil Sidang');
+        writeln('4.Cari Permasalahan');
+        writeln('5.exit');
+        readln(n);
+        end;
+
+
+        procedure cari;
+        begin
+        writeln('Masukan Nama Pelapor : 'A[n].namaplpr);
+        writeln('Masukan Nama Pelaku : 'A[n].namaplk);
+
+        procedure permasalahan();
+        var
+                n:integer;
+        begin
+        n:=length(A);
+        setlength(A,n+1);
+        clrscr;
+        writeln('Masukan Nama Pelapor : ');
+        readln(A[n].namalpr);
+        writeln('Masukan Nama Pelaku : ');
+        readln(A[n].namaplk);
+        write('Data berhasil ditambahkan ...');readln;
+        menu;
+        end;
+
+        procedure sidang;
+        begin
+        end;
+
+        procedure hasil;
+        begin
+        end;
+
+begin
+        menu();
+        if n=1 then begin
+                permasalahan();
+        end;
+        if n=2 then begin
+                sidang();
+        end;
+        if n=3 then begin
+                hasil();
+        if n=4 then begin
+                cari();
+        end;
+        readln;
+end.
